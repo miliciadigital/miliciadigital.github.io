@@ -509,68 +509,17 @@
 
         <div>
 
-          <p class="amount">$40 EUR</p>
+          <p class="amount">$80 USD</p>
           <h4>Servicio Profesional en <span>Apps Móviles en GOOGLE DRIVE</span></h4>
         </div>
 
-        <a href="https://api.whatsapp.com/send?phone=573116780829&text=Te%20contacto%20desde%20la%20web%20de%20MiliciaDigital%20para%20mas%20info" target="_blank"><img src="images/whatsapp.png" style="width:70%;"/></a>	
-		
+        <a href="https://api.whatsapp.com/send?phone=573116780829&text=Te%20contacto%20desde%20la%20web%20de%20MiliciaDigital%20para%20mas%20info" target="_blank"><img src="images/whatsapp.png" style="width:70%;"/></a>
       </div>
 
     </div>
   </div>
   <!-- registration ends! -->
 
-<!-- PAYPAL -->
-<div id="smart-button-container">
-      <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
-      </div>
-    </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
-  <script>
-    function initPayPalButton() {
-      paypal.Buttons({
-        style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'paypal',
-          
-        },
-
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{"description":"Agencia consultora en informatica","amount":{"currency_code":"EUR","value":40}}]
-          });
-        },
-
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(orderData) {
-            
-            // Full available details
-            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-            // Show a success message within this page, e.g.
-            const element = document.getElementById('paypal-button-container');
-            element.innerHTML = '';
-            element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-            // Or go to another URL:  actions.redirect('thank_you.html');
-            
-          });
-        },
-
-        onError: function(err) {
-          console.log(err);
-        }
-      }).render('#paypal-button-container');
-    }
-    initPayPalButton();
-  </script>
-<!-- PAYPAL -->	  
-  
-  
   <a id="sponsors" class="anchor"></a>
 
   <a id="location" class="anchor"></a>
